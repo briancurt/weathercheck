@@ -5,6 +5,7 @@
 
 import requests
 import bs4
+import re
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from pyvirtualdisplay import Display
@@ -19,7 +20,7 @@ def get_accu():
 
         accu = requests.get('http://www.accuweather.com/es/ar/buenos-aires/7894/weather-forecast/7894')
         soup = BeautifulSoup(accu.content, 'html.parser')
-        return soup.find(class_="day current first cl").find(class_="large-temp").string
+        return soup.find("li", class_=re.compile('current first cl')).find(class_="large-temp").string
         
 def get_wc():
 
