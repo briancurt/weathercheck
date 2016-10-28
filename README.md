@@ -1,2 +1,2 @@
-# weathercheck.py
+# Weathercheck application
 In progress
