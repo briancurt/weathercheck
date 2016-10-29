@@ -29,4 +29,8 @@ dnf install google-chrome-stable -y
 Copy other/nginx.conf to /etc/nginx/nginx.conf
 Copy other/weather.service to /etc/systemd/system/
 
-Review permissions and SELinux
+Then after starting nginx and weather.service it should work.
+
+Review permissions and SELinux.
+
+Add weatherscrap.py process to crontab or something.
