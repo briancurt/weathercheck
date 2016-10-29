@@ -37,15 +37,15 @@ def get_wc():
 def main():
 
         smn = get_smn()
-        with open('../tmp/smn', 'w') as f:
+        with open('/tmp/smn', 'w') as f:
                 f.write(smn)
 
         accu = get_accu()
-        with open('../tmp/accu', 'w') as f:
+        with open('/tmp/accu', 'w') as f:
                 f.write(accu)
 
         wc = get_wc()
-        with open('../tmp/wc', 'w') as f:
+        with open('/tmp/wc', 'w') as f:
                 f.write(wc)
 
 #       print("SMN:     ", get_smn(), "ST: n/a")
