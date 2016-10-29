@@ -14,13 +14,14 @@ def get_smn():
         
         smn = requests.get('http://www.smn.gov.ar/?mod=pron&id=1')
         soup = BeautifulSoup(smn.content, 'html.parser')
-        return soup.find(id="divPronostico").b.string
+        return soup.find(id="divPronostico").b.string.split()[0]
         
 def get_accu():
 
         accu = requests.get('http://www.accuweather.com/es/ar/buenos-aires/7894/weather-forecast/7894')
         soup = BeautifulSoup(accu.content, 'html.parser')
-        return soup.find("li", class_=re.compile('current first cl')).find(class_="large-temp").string
+        u = soup.find("li", class_=re.compile('current first cl')).find(class_="large-temp").string
+        return u.replace("°", "")
         
 def get_wc():
 
