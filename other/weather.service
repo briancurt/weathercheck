@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve Weather website
+After=network.target
+
+[Service]
+User=nginx
+Group=nginx
+WorkingDirectory=/usr/share/nginx/html/weathercheck
+Environment="PATH=$PATH:/usr/share/nginx/html/weathercheck"
+ExecStart=/usr/bin/uwsgi --ini weather.ini
+
+[Install]
+WantedBy=multi-user.target
