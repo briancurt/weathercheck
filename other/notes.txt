@@ -1,0 +1,32 @@
+# A draft of some notes, basic steps and libraries to install #
+
+dnf update -y
+dnf install wget unzip nginx xorg-x11-server-Xvfb uwsgi git gcc python3-devel uwsgi-plugin-python3.x86_64 -y
+dnf groupinstall "Development Tools" -y (optional/review)
+pip3 install --upgrade pip
+- flask
+- bs4
+- selenium
+- pyvirtualdisplay
+- uwsgi
+
+wget http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
+unzip chromedriver_linux64.zip
+
+mv chromedriver /usr/bin/
+
+cat << EOF > /etc/yum.repos.d/google-chrome.repo
+[google-chrome]
+name=google-chrome - \$basearch
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/\$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+EOF
+
+dnf install google-chrome-stable -y
+
+Copy other/nginx.conf to /etc/nginx/nginx.conf
+Copy other/weather.service to /etc/systemd/system/
+
+Review permissions and SELinux
