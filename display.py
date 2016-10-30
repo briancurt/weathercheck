@@ -13,4 +13,4 @@ def index():
     return render_template('index.html', smn_temp=smn_temp, accu_temp=accu_temp, wc_temp=wc_temp)
 
 if __name__ == "__main__":
-    app.run(0.0.0.0)
+    app.run('0.0.0.0')
