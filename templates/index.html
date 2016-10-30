@@ -1,7 +1,32 @@
+<!DOCTYPE HTML>
 <html>
-  <body>
-      <h1>La temperatura actual segun el SMN es {{ smn_temp }}</h1>
-      <h1>La temperatura actual segun Accuweather es {{ accu_temp }}</h1>
-      <h1>La temperatura actual segun Weather Channel es {{ wc_temp }}</h1>
-  </body>
+	<head>
+		<title>Climaloco</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body id="top">
+			<header id="header">
+				<div class="content">
+					<h1>La temperatura <br />
+					en Buenos Aires según...</h1>
+					<p>...el Servicio Meteorologico Nacional: {{ smn_temp }}<br />
+					...Accuweather: {{ accu_temp }}<br />
+					...The Weather Channel: {{ wc_temp }}</p>
+				</div>
+			</header>
+		<!--	<footer id="footer">
+				<p class="copyright">&copy; </p>
+			</footer>	-->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+	</body>
 </html>
