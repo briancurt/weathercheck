@@ -1,32 +1,37 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Climaloco</title>
+		<title>kekalorpa</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="/static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<!--[if lte IE 8]><script src="../static/assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="/static/assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="/static/assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="../static/assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="../static/assets/css/ie9.css" /><![endif]-->
 	</head>
-	<body id="top">
-			<header id="header">
-				<div class="content">
-					<h1>La temperatura <br />
-					en Buenos Aires según...</h1>
-					<p>...el Servicio Meteorologico Nacional: {{ smn_temp }} °C<br />
-					...Accuweather: {{ accu_temp }} °C<br />
-					...The Weather Channel: {{ wc_temp }} °C</p>
-				</div>
-			</header>
-		<!--	<footer id="footer">
-				<p class="copyright">&copy; </p>
-			</footer>	-->
-			<script src="../static/assets/js/jquery.min.js"></script>
-			<script src="../static/assets/js/jquery.scrolly.min.js"></script>
-			<script src="../static/assets/js/skel.min.js"></script>
-			<script src="../static/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="/static/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="../static/assets/js/main.js"></script>
+	<body class="loading">
+		<div id="wrapper">
+			<div id="bg"></div>
+			<div id="overlay"></div>
+			<div id="main">
+					<header id="header">
+						<h1>La temperatura <br />en Buenos Aires según...</h1>
+						<br />
+						<h2>...el Servicio Meteorologico Nacional: {{ smn_temp }} °C</h2>
+						<h2>...Accuweather.com: {{ smn_accu }} °C</h2>
+						<h2>...The Weather Channel: {{ smn_wc }} °C</h2>
+						<p>Última actualización: 00:00 hs</p>
+					</header>
+					<footer id="footer">
+						<span class="copyright">&copy; briancurt.</span>
+					</footer>
+			</div>
+		</div>
+		<!--[if lte IE 8]><script src="../static/assets/js/ie/respond.min.js"></script><![endif]-->
+		<script>
+			window.onload = function() { document.body.className = ''; }
+			window.ontouchmove = function() { return false; }
+			window.onorientationchange = function() { document.body.scrollTop = 0; }
+		</script>
 	</body>
 </html>
