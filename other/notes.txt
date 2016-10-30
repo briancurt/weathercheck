@@ -1,18 +1,14 @@
 # A draft of some notes, basic steps and libraries to install #
 
+# Custom base AMI #
+
 dnf update -y
 dnf install wget unzip nginx xorg-x11-server-Xvfb uwsgi git gcc python3-devel uwsgi-plugin-python3.x86_64 -y
-dnf groupinstall "Development Tools" -y (optional/review)
 pip3 install --upgrade pip
-- flask
-- bs4
-- selenium
-- pyvirtualdisplay
-- uwsgi
-
+pip3 install flask bs4 selenium pyvirtualdisplay uwsgi
+cd /root
 wget http://chromedriver.storage.googleapis.com/2.25/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
-
 mv chromedriver /usr/bin/
 
 cat << EOF > /etc/yum.repos.d/google-chrome.repo
@@ -26,11 +22,16 @@ EOF
 
 dnf install google-chrome-stable -y
 
-Copy other/nginx.conf to /etc/nginx/nginx.conf
-Copy other/weather.service to /etc/systemd/system/
+# End base AMI requirements #
 
-Then after starting nginx and weather.service it should work.
+# Bootstrap scripts below #
 
-Review permissions and SELinux.
-
-Add weatherscrap.py process to crontab or something.
+cd /usr/share/nginx/html/
+git clone https://github.com/briancurt/weathercheck.git
+chown -R root:root weathercheck/
+/bin/cp -rf weathercheck/other/nginx.conf /etc/nginx/nginx.conf 
+/bin/cp -rf weathercheck/other/weather.service /etc/systemd/system/
+systemctl start weather.service
+systemctl start nginx
+systemctl enable nginx
+(crontab -l ; echo "30 * * * * root /usr/share/nginx/html/weathercheck/scripts/weatherscrap.py") | crontab -
