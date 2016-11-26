@@ -179,7 +179,7 @@
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: lightseagreen url("images/bga.jpg") bottom left;
+		background: lightseagreen url("images/clear_day.jpg") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -253,7 +253,7 @@
 	}
 
 	#bg {
-		background-size: 2250px auto;
+		background-size: auto;
 		width: 6750px;
 	}
 
@@ -764,7 +764,7 @@
 		}
 
 		#bg {
-			background-size: 1500px auto;
+			background-size: auto;
 			width: 4500px;
 		} }
 
@@ -846,7 +846,7 @@
 		}
 
 		#bg {
-			background-size: 750px auto;
+			background-size: auto;
 			width: 2250px;
 		} }
 
@@ -932,7 +932,7 @@
 		}
 
 		#bg {
-			background-size: 300px auto;
+			background-size: auto;
 			width: 900px;
 		}
 
@@ -1034,7 +1034,7 @@
 		}
 
 		#bg {
-			background-size: 412.5px auto;
+			background-size: auto;
 			width: 1237.5px;
 		}
 
