@@ -6,6 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="../static/assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		{% if ampm == 1 %}
+		    <link rel="stylesheet" href="../static/assets/css/day.css" />
+		{% endif %}
+		{% if ampm == 0 %}
+		    <link rel="stylesheet" href="../static/assets/css/night.css" />
+		{% endif %}
 		<!--[if lte IE 8]><link rel="stylesheet" href="../static/assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="../static/assets/css/ie9.css" /><![endif]-->
 	</head>
@@ -15,15 +21,15 @@
 			<div id="overlay"></div>
 			<div id="main">
 					<header id="header">
-						<h1>La temperatura <br />en Buenos Aires según...</h1>
+						<h1>La temperatura <br />en Buenos Aires...</h1>
 						<br />
-						<h2>...el Servicio Meteorologico Nacional: {{ smn_temp }} °C</h2>
-						<h2>...Accuweather.com: {{ accu_temp }} °C</h2>
-						<h2>...The Weather Channel: {{ wc_temp }} °C</h2>
+						<h2>Servicio Meteorologico Nacional: {{ smn_temp }} °C</h2>
+						<h2>Accuweather.com: {{ accu_temp }} °C</h2>
+						<h2>The Weather Channel: {{ wc_temp }} °C</h2>
 						<p>Última actualización: {{ lastupdate }} </p>
 					</header>
 					<footer id="footer">
-						<span class="copyright">&copy; briancurt.</span>
+						<span class="copyright">&copy; 2016 briancurt.</span>
 					</footer>
 			</div>
 		</div>

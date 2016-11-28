@@ -162,7 +162,7 @@
 		width: 100%;
 	}
 
-/* BG */
+/* BG 
 
 	#bg {
 		-moz-animation: bg 60s linear infinite;
@@ -177,7 +177,7 @@
 		-webkit-transform: translate3d(0,0,0);
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
-	/* Set your background with this */
+
 
 		background: lightseagreen url("images/clear_day.jpg") bottom left;
 		background-repeat: repeat-x;
@@ -187,7 +187,7 @@
 		position: fixed;
 		top: 0;
 	}
-
+*/
 	@-moz-keyframes bg {
 		0% {
 			-moz-transform: translate3d(0,0,0);

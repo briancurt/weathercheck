@@ -5,6 +5,7 @@
 
 import os
 import datetime
+from time import strftime
 
 def collectsmn():
     with open('/tmp/smn', 'r') as f:
@@ -26,3 +27,7 @@ def collecttime():
     val = os.path.getmtime('/tmp/smn')
     a = datetime.datetime.fromtimestamp(val)
     return a.strftime('%H:%M:%S')
+
+def timeofday():
+    p = int(strftime("%H")) 
+    return p
